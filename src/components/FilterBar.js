@@ -3,10 +3,11 @@ import { Card, CardContent, Typography, makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
-    width: '50%',
+    maxWidth: 800,
+    width: '95%',
     height: 160,
     marginTop: -80,
+    margin: 'auto',
   },
 })
 
@@ -21,18 +22,10 @@ export default function FilterBar() {
           color="textSecondary"
           gutterBottom
         >
-          Word of the Day
+          Cerca un live stream
         </Typography>
         <Typography variant="h5" component="h2">
-          asdasd
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          Filtra
         </Typography>
       </CardContent>
     </Card>

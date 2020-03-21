@@ -26,7 +26,7 @@
     "rules": {
       "no-console": "warn",
       "react/no-multi-comp": "warn",
-      "react/prop-types": "warn",
+      "react/prop-types": 0,
       "import/order": "warn",
       "no-unused-vars": "warn"
     }

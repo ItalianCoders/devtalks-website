@@ -4,6 +4,7 @@ import {
   createMuiTheme,
   responsiveFontSizes,
   ThemeProvider,
+  Box,
 } from '@material-ui/core'
 
 import style from './App.module.css'
@@ -37,6 +38,9 @@ function App() {
         <FilterBar />
         <Events />
       </main>
+      <footer className={style.footer}>
+        <Box color="white">@italiancoders</Box>
+      </footer>
     </ThemeProvider>
   )
 }
