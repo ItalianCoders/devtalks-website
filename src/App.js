@@ -1,26 +1,43 @@
 import React from 'react'
+import {
+  Typography,
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from '@material-ui/core'
 
 import style from './App.module.css'
-import logo from './logo.svg'
+import mic from './assets/microphone.png'
+import FilterBar from './components/FilterBar'
+import Events from './components/Events'
+
+let theme = createMuiTheme()
+theme = responsiveFontSizes(theme)
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <header className={style.header}>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <img
+            src={mic}
+            alt="microfono"
+            style={{
+              height: 100,
+              alignSelf: 'center',
+            }}
+          />
+          <div>
+            <Typography variant="h2">italianCoders</Typography>
+            <Typography variant="h3">DevTalks</Typography>
+          </div>
+        </div>
       </header>
-    </div>
+      <main className={style.container}>
+        <FilterBar />
+        <Events />
+      </main>
+    </ThemeProvider>
   )
 }
 
