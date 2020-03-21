@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56.25%',
   },
 }))
 
@@ -46,7 +46,8 @@ function Event({ info }) {
         }
         avatar={<Avatar aria-label="recipe">{info.title[0]}</Avatar>}
         title={info.title}
-        subheader={`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}
+        subheader={`${date.getDate()}-${date.getMonth() +
+          1}-${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`}
       />
       <CardMedia
         className={classes.media}
