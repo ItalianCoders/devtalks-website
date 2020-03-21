@@ -1,0 +1,30 @@
+.bar {
+  max-width: 800px;
+  width: 95%;
+  height: 160px;
+  margin: -80px auto 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+
+.wrapper > * {
+  margin: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper > * {
+    margin: 40px 0;
+  }
+  .bar {
+    height: 250px;
+    margin: -100px auto 0 auto;
+  }
+}

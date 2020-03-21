@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Typography,
   createMuiTheme,
@@ -16,6 +16,8 @@ let theme = createMuiTheme()
 theme = responsiveFontSizes(theme)
 
 function App() {
+  const [filters, setFilters] = useState({ title: '', pastFuture: null })
+
   return (
     <ThemeProvider theme={theme}>
       <header className={style.header}>
@@ -35,8 +37,8 @@ function App() {
         </div>
       </header>
       <main className={style.container}>
-        <FilterBar />
-        <Events />
+        <FilterBar filters={filters} setFilters={setFilters} />
+        <Events filters={filters} />
       </main>
       <footer className={style.footer}>
         <Box color="white">@italiancoders</Box>

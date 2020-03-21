@@ -39,6 +39,11 @@ function Event({ info }) {
   return (
     <Card className={classes.root}>
       <CardHeader
+        action={
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        }
         avatar={<Avatar aria-label="recipe">{info.title[0]}</Avatar>}
         title={info.title}
         subheader={`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}
@@ -46,7 +51,6 @@ function Event({ info }) {
       <CardMedia
         className={classes.media}
         image={`${basename}/${info.cover_image}`}
-        title="Paella dish"
       />
       <CardContent>
         <Typography
@@ -70,7 +74,11 @@ function Event({ info }) {
               aria-label="youtube video"
               disabled={!info.youtube_stream_url}
             >
-              <YouTubeIcon />
+              <YouTubeIcon
+                style={{
+                  ...(info.youtube_stream_url && { color: '#ff0000' }),
+                }}
+              />
             </IconButton>
           </span>
         </Tooltip>
@@ -89,24 +97,47 @@ function Event({ info }) {
               aria-label="facebook video"
               disabled={!info.facebook_stream_url}
             >
-              <FacebookIcon />
+              <FacebookIcon
+                style={{
+                  ...(info.facebook_stream_url && { color: '#3b5998' }),
+                }}
+              />
             </IconButton>
           </span>
         </Tooltip>
-
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
       </CardActions>
     </Card>
   )
 }
 
-export default function Events() {
+export default function Events({ filters }) {
   const [events, setEvents] = useState([])
+  const [filteredEvents, setFilteredEvents] = useState([])
   const [err, setError] = useState(false)
   const [fetching, setFetching] = useState(false)
   const [reload, setReload] = useState(false)
+
+  useEffect(() => {
+    const now = Date.now()
+    let evts = events
+
+    if (filters.title) {
+      evts = evts.filter(e =>
+        e.title.toLowerCase().includes(filters.title.toLowerCase())
+      )
+    }
+    if (filters.pastFuture === 'future') {
+      evts = evts.filter(e => {
+        return new Date(e.reference_date).getTime() >= now
+      })
+    } else if (filters.pastFuture === 'past') {
+      evts = evts.filter(e => {
+        return new Date(e.reference_date).getTime() <= now
+      })
+    }
+
+    setFilteredEvents(evts)
+  }, [filters, events])
 
   useEffect(() => {
     async function fetchEvents() {
@@ -114,7 +145,7 @@ export default function Events() {
         setFetching(true)
         const data = await (
           await fetch(
-            'https://cors-anywhere.herokuapp.com/http://dev-talks.italiancoders.it/api/v1/talks'
+            `https://cors-anywhere.herokuapp.com/${basename}/api/v1/talks`
           )
         ).json()
         setEvents(data)
@@ -137,7 +168,7 @@ export default function Events() {
         />
       )}
       <div className={style.grid}>
-        {events.map(e => (
+        {filteredEvents.map(e => (
           <Event info={e} key={e.reference_date} />
         ))}
       </div>
