@@ -18,17 +18,17 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import ShareIcon from '@material-ui/icons/Share'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 
+import Masonry from 'react-masonry-css'
 import { basename } from '../constants/endpoints'
 import style from './Events.module.css'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flex: '0 0 30%',
     margin: 10,
   },
   media: {
     height: 0,
-    paddingTop: '56.25%',
+    paddingTop: '70%',
   },
 }))
 
@@ -37,7 +37,7 @@ function Event({ info }) {
   const date = new Date(info.reference_date)
 
   return (
-    <Card className={classes.root}>
+    <Card>
       <CardHeader
         action={
           <IconButton aria-label="share">
@@ -168,11 +168,19 @@ export default function Events({ filters }) {
           style={{ margin: '100px auto', maxWidth: 800, width: '95%' }}
         />
       )}
-      <div className={style.grid}>
+      <Masonry
+        breakpointCols={{
+          default: 3,
+          1100: 2,
+          700: 1,
+        }}
+        className={style.grid}
+        columnClassName={style.gridElement}
+      >
         {filteredEvents.map(e => (
           <Event info={e} key={e.reference_date} />
         ))}
-      </div>
+      </Masonry>
       {err && (
         <>
           <Typography variant="h4" style={{ margin: 20 }}>
