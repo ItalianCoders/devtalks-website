@@ -13,6 +13,8 @@ import {
   Button,
   Tooltip,
   LinearProgress,
+  Menu,
+  MenuItem,
 } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import ShareIcon from '@material-ui/icons/Share'
@@ -32,23 +34,59 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const shareUrl = {
+  Facebook: 'https://facebook.com/sharer.php?display=popup&u=',
+  Twitter: 'https://twitter.com/intent/tweet?text=',
+  Linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url=',
+}
+
+const options = 'toolbar=0,status=0,resizable=1,width=626,height=436'
+
 function Event({ info }) {
   const classes = useStyles()
+  const [anchorEl, setAnchorEl] = useState(null)
+
   const date = new Date(info.reference_date)
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const share = e => {
+    window.open(
+      shareUrl[e.target.innerText] +
+        (info.youtube_stream_url || window.location.href),
+      'sharer',
+      options
+    )
+  }
 
   return (
     <Card>
       <CardHeader
         action={
-          <IconButton aria-label="share">
+          <IconButton aria-label="condividi" onClick={handleClick}>
             <ShareIcon />
           </IconButton>
         }
-        avatar={<Avatar aria-label="recipe">{info.title[0]}</Avatar>}
+        avatar={<Avatar>{info.title[0]}</Avatar>}
         title={info.title}
         subheader={`${date.getDate()}-${date.getMonth() +
           1}-${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`}
       />
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
+      >
+        <MenuItem id="fb" onClick={share} value="fb">
+          Facebook
+        </MenuItem>
+        <MenuItem onClick={share}>Twitter</MenuItem>
+        <MenuItem onClick={share}>Linkedin</MenuItem>
+      </Menu>
       <CardMedia
         className={classes.media}
         image={`${basename}/${info.cover_image}`}
