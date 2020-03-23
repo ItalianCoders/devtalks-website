@@ -19,7 +19,7 @@ export default function Links() {
         Chi siamo
       </Button>
       <div
-        class="g-ytsubscribe"
+        className="g-ytsubscribe"
         data-channelid="UCMAh8IjSY_iVR0gWA3I--ng"
         data-count="default"
       />

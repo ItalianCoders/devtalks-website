@@ -17,6 +17,7 @@ import {
   MenuItem,
   Divider,
   useMediaQuery,
+  Box,
 } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import ShareIcon from '@material-ui/icons/Share'
@@ -74,9 +75,16 @@ function Event({ info, style }) {
           </IconButton>
         }
         avatar={<Avatar>{info.title[0]}</Avatar>}
-        title={info.title}
+        title={
+          <Box>
+            <Typography color="textSecondary" gutterBottom variant="small">
+              di {info.authors.join(', ')}
+            </Typography>
+            <Typography>{info.title}</Typography>
+          </Box>
+        }
         subheader={`${date.getDate()}-${date.getMonth() +
-          1}-${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`}
+          1}-${date.getFullYear()}, alle ${date.getHours()}:${date.getMinutes()}`}
       />
       <Menu
         id="simple-menu"
