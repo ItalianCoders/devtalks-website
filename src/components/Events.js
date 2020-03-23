@@ -1,5 +1,5 @@
 /* eslint-disable react/no-multi-comp */
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   Card,
   CardContent,
@@ -15,6 +15,8 @@ import {
   LinearProgress,
   Menu,
   MenuItem,
+  Divider,
+  useMediaQuery,
 } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import ShareIcon from '@material-ui/icons/Share'
@@ -22,16 +24,18 @@ import YouTubeIcon from '@material-ui/icons/YouTube'
 
 import Masonry from 'react-masonry-css'
 import { basename } from '../constants/endpoints'
+import useEvents from '../hooks/useEvents'
 import style from './Events.module.css'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    margin: 10,
-  },
-  media: {
+  root: props => ({
+    ...(props.width && { width: props.width }),
+    ...(props.margin && { margin: props.margin }),
+  }),
+  media: props => ({
     height: 0,
-    paddingTop: '70%',
-  },
+    paddingTop: props.paddingTop || '70%',
+  }),
 }))
 
 const shareUrl = {
@@ -42,8 +46,8 @@ const shareUrl = {
 
 const options = 'toolbar=0,status=0,resizable=1,width=626,height=436'
 
-function Event({ info }) {
-  const classes = useStyles()
+function Event({ info, style }) {
+  const classes = useStyles(style)
   const [anchorEl, setAnchorEl] = useState(null)
 
   const date = new Date(info.reference_date)
@@ -62,7 +66,7 @@ function Event({ info }) {
   }
 
   return (
-    <Card>
+    <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="condividi" onClick={handleClick}>
@@ -149,63 +153,50 @@ function Event({ info }) {
   )
 }
 
+function FeaturedEvents({ events }) {
+  const matches = useMediaQuery(theme => theme.breakpoints.up('md'))
+
+  if (events.length) {
+    return (
+      <>
+        <Typography variant="h4" gutterBottom>
+          In rilievo
+        </Typography>
+        {events.map(e => (
+          <Event
+            info={e}
+            style={{
+              width: matches ? '60%' : '90%',
+              paddingTop: matches ? '30%' : '50%',
+              margin: 'auto',
+            }}
+          />
+        ))}
+        <Divider variant="middle" style={{ marginTop: 70 }} />
+      </>
+    )
+  }
+
+  return null
+}
+
 export default function Events({ filters }) {
-  const [events, setEvents] = useState([])
-  const [filteredEvents, setFilteredEvents] = useState([])
-  const [err, setError] = useState(false)
-  const [fetching, setFetching] = useState(false)
-  const [reload, setReload] = useState(false)
+  const { fetching, filteredEvents, err, fetchEvents: reload } = useEvents(
+    filters
+  )
 
-  useEffect(() => {
-    const now = Date.now()
-    let evts = events
-
-    if (filters.title) {
-      evts = evts.filter(e =>
-        e.title.toLowerCase().includes(filters.title.toLowerCase())
-      )
-    }
-    if (filters.pastFuture === 'future') {
-      evts = evts.filter(e => {
-        return new Date(e.reference_date).getTime() >= now
-      })
-    } else if (filters.pastFuture === 'past') {
-      evts = evts.filter(e => {
-        return new Date(e.reference_date).getTime() <= now
-      })
-    }
-
-    setFilteredEvents(evts)
-  }, [filters, events])
-
-  useEffect(() => {
-    async function fetchEvents() {
-      try {
-        setFetching(true)
-        const data = await (
-          await fetch(
-            `https://cors-anywhere.herokuapp.com/${basename}/api/v1/talks`
-          )
-        ).json()
-        setEvents(data)
-      } catch (e) {
-        setError(true)
-      } finally {
-        setFetching(false)
-      }
-    }
-
-    fetchEvents()
-  }, [reload])
+  if (fetching) {
+    return (
+      <LinearProgress
+        color="secondary"
+        style={{ margin: '100px auto', maxWidth: 800, width: '95%' }}
+      />
+    )
+  }
 
   return (
     <>
-      {fetching && (
-        <LinearProgress
-          color="secondary"
-          style={{ margin: '100px auto', maxWidth: 800, width: '95%' }}
-        />
-      )}
+      <FeaturedEvents events={filteredEvents.filter(e => !!+e.is_featured)} />
       <Masonry
         breakpointCols={{
           default: 3,
@@ -224,11 +215,7 @@ export default function Events({ filters }) {
           <Typography variant="h4" style={{ margin: 20 }}>
             Spiacenti si è verificato un errore
           </Typography>
-          <Button
-            style={{ margin: 10 }}
-            color="primary"
-            onClick={() => setReload(r => !r)}
-          >
+          <Button style={{ margin: 10 }} color="primary" onClick={reload}>
             Ricarica gli eventi
           </Button>
         </>

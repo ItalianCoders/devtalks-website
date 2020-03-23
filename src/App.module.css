@@ -4,14 +4,20 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
   color: #fff;
 }
 
-.header > div {
+.hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -10vh;
+}
+
+.hero > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
