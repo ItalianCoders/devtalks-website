@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.6260d39d.chunk.css",
-    "main.js": "/static/js/main.27e2b089.chunk.js",
-    "main.js.map": "/static/js/main.27e2b089.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ea7d83ad.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ea7d83ad.js.map",
-    "static/js/2.ca1dbe43.chunk.js": "/static/js/2.ca1dbe43.chunk.js",
-    "static/js/2.ca1dbe43.chunk.js.map": "/static/js/2.ca1dbe43.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8473f261c7ad85b282e6cb1b0a2f45cd.js": "/precache-manifest.8473f261c7ad85b282e6cb1b0a2f45cd.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.6260d39d.chunk.css.map": "/static/css/main.6260d39d.chunk.css.map",
-    "static/js/2.ca1dbe43.chunk.js.LICENSE.txt": "/static/js/2.ca1dbe43.chunk.js.LICENSE.txt",
-    "static/media/microphone.png": "/static/media/microphone.06dda84b.png"
+    "main.css": "https://italiancoders.it/devtalks/static/css/main.7c21629f.chunk.css",
+    "main.js": "https://italiancoders.it/devtalks/static/js/main.02cceef8.chunk.js",
+    "main.js.map": "https://italiancoders.it/devtalks/static/js/main.02cceef8.chunk.js.map",
+    "runtime-main.js": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js",
+    "runtime-main.js.map": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js.map",
+    "static/js/2.95eb21bb.chunk.js": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js",
+    "static/js/2.95eb21bb.chunk.js.map": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js.map",
+    "index.html": "https://italiancoders.it/devtalks/index.html",
+    "precache-manifest.8e923457b23b3235150c6ba710d5e709.js": "https://italiancoders.it/devtalks/precache-manifest.8e923457b23b3235150c6ba710d5e709.js",
+    "service-worker.js": "https://italiancoders.it/devtalks/service-worker.js",
+    "static/css/main.7c21629f.chunk.css.map": "https://italiancoders.it/devtalks/static/css/main.7c21629f.chunk.css.map",
+    "static/js/2.95eb21bb.chunk.js.LICENSE.txt": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js.LICENSE.txt",
+    "static/media/microphone.png": "https://italiancoders.it/devtalks/static/media/microphone.06dda84b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ea7d83ad.js",
-    "static/js/2.ca1dbe43.chunk.js",
-    "static/css/main.6260d39d.chunk.css",
-    "static/js/main.27e2b089.chunk.js"
+    "static/js/runtime-main.24fcab54.js",
+    "static/js/2.95eb21bb.chunk.js",
+    "static/css/main.7c21629f.chunk.css",
+    "static/js/main.02cceef8.chunk.js"
   ]
 }
