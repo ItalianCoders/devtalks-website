@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "https://italiancoders.it/devtalks/static/css/main.7c21629f.chunk.css",
-    "main.js": "https://italiancoders.it/devtalks/static/js/main.02cceef8.chunk.js",
-    "main.js.map": "https://italiancoders.it/devtalks/static/js/main.02cceef8.chunk.js.map",
+    "main.css": "https://italiancoders.it/devtalks/static/css/main.51f7e749.chunk.css",
+    "main.js": "https://italiancoders.it/devtalks/static/js/main.f559b9ba.chunk.js",
+    "main.js.map": "https://italiancoders.it/devtalks/static/js/main.f559b9ba.chunk.js.map",
     "runtime-main.js": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js",
     "runtime-main.js.map": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js.map",
-    "static/js/2.95eb21bb.chunk.js": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js",
-    "static/js/2.95eb21bb.chunk.js.map": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js.map",
+    "static/js/2.d1f61836.chunk.js": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js",
+    "static/js/2.d1f61836.chunk.js.map": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js.map",
     "index.html": "https://italiancoders.it/devtalks/index.html",
-    "precache-manifest.8e923457b23b3235150c6ba710d5e709.js": "https://italiancoders.it/devtalks/precache-manifest.8e923457b23b3235150c6ba710d5e709.js",
+    "precache-manifest.49adc47b598de4b7654b20b52063089a.js": "https://italiancoders.it/devtalks/precache-manifest.49adc47b598de4b7654b20b52063089a.js",
     "service-worker.js": "https://italiancoders.it/devtalks/service-worker.js",
-    "static/css/main.7c21629f.chunk.css.map": "https://italiancoders.it/devtalks/static/css/main.7c21629f.chunk.css.map",
-    "static/js/2.95eb21bb.chunk.js.LICENSE.txt": "https://italiancoders.it/devtalks/static/js/2.95eb21bb.chunk.js.LICENSE.txt",
+    "static/css/main.51f7e749.chunk.css.map": "https://italiancoders.it/devtalks/static/css/main.51f7e749.chunk.css.map",
+    "static/js/2.d1f61836.chunk.js.LICENSE.txt": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js.LICENSE.txt",
     "static/media/microphone.png": "https://italiancoders.it/devtalks/static/media/microphone.06dda84b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.24fcab54.js",
-    "static/js/2.95eb21bb.chunk.js",
-    "static/css/main.7c21629f.chunk.css",
-    "static/js/main.02cceef8.chunk.js"
+    "static/js/2.d1f61836.chunk.js",
+    "static/css/main.51f7e749.chunk.css",
+    "static/js/main.f559b9ba.chunk.js"
   ]
 }

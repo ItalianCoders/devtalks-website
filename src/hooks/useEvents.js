@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from 'react'
-import { basename } from '../constants/endpoints'
 
 export default function useEvents(filters) {
   const [events, setEvents] = useState([])
@@ -11,9 +10,7 @@ export default function useEvents(filters) {
     try {
       setFetching(true)
       const data = await (
-        await fetch(
-          `https://cors-anywhere.herokuapp.com/${basename}/api/v1/talks`
-        )
+        await fetch(`${process.env.REACT_APP_BASENAME}/api/v1/talks`)
       ).json()
       setEvents(data)
     } catch (e) {

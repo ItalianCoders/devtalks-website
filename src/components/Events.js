@@ -164,6 +164,7 @@ function FeaturedEvents({ events }) {
         </Typography>
         {events.map(e => (
           <Event
+            key={e.reference_date}
             info={e}
             style={{
               width: matches ? '60%' : '90%',
