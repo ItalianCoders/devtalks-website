@@ -18,6 +18,7 @@ import {
   Divider,
   useMediaQuery,
   Box,
+  styled,
 } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import ShareIcon from '@material-ui/icons/Share'
@@ -170,17 +171,15 @@ function FeaturedEvents({ events }) {
         <Typography variant="h4" gutterBottom>
           In rilievo
         </Typography>
-        {events.map(e => (
-          <Event
-            key={e.reference_date}
-            info={e}
-            style={{
-              width: matches ? '60%' : '90%',
-              paddingTop: matches ? '30%' : '50%',
-              margin: 'auto',
-            }}
-          />
-        ))}
+        <Grid>
+          {events.map(e => (
+            <Event
+              key={e.reference_date}
+              info={e}
+              style={{ paddingTop: matches ? '50%' : '70%' }}
+            />
+          ))}
+        </Grid>
         <Divider variant="middle" style={{ marginTop: 70 }} />
       </>
     )
@@ -232,3 +231,10 @@ export default function Events({ filters }) {
     </>
   )
 }
+
+const Grid = styled('div')({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridColumnGap: '40px',
+  gridRowGap: '5px',
+})
