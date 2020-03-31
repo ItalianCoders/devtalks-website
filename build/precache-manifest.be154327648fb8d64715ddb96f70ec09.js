@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10608e60a8340f3ad1fef0055f115255",
+    "revision": "92c7e6d4cfc2b5c1e72e0c6a643ef44b",
     "url": "https://italiancoders.it/devtalks/index.html"
   },
   {
-    "revision": "f0056a79396ee7110196",
+    "revision": "4341bb6325196860df64",
     "url": "https://italiancoders.it/devtalks/static/css/main.51f7e749.chunk.css"
   },
   {
-    "revision": "88251b822c432dc17009",
-    "url": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js"
+    "revision": "c278ff784a6772a19bb9",
+    "url": "https://italiancoders.it/devtalks/static/js/2.280af915.chunk.js"
   },
   {
     "revision": "eac4cf64bf573541fd6dba29c78393a0",
-    "url": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js.LICENSE.txt"
+    "url": "https://italiancoders.it/devtalks/static/js/2.280af915.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f0056a79396ee7110196",
-    "url": "https://italiancoders.it/devtalks/static/js/main.9bb53dfa.chunk.js"
+    "revision": "4341bb6325196860df64",
+    "url": "https://italiancoders.it/devtalks/static/js/main.ddfaaa74.chunk.js"
   },
   {
     "revision": "4c2afffdff7780b5098a",

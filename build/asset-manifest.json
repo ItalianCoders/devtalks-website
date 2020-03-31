@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "https://italiancoders.it/devtalks/static/css/main.51f7e749.chunk.css",
-    "main.js": "https://italiancoders.it/devtalks/static/js/main.9bb53dfa.chunk.js",
-    "main.js.map": "https://italiancoders.it/devtalks/static/js/main.9bb53dfa.chunk.js.map",
+    "main.js": "https://italiancoders.it/devtalks/static/js/main.ddfaaa74.chunk.js",
+    "main.js.map": "https://italiancoders.it/devtalks/static/js/main.ddfaaa74.chunk.js.map",
     "runtime-main.js": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js",
     "runtime-main.js.map": "https://italiancoders.it/devtalks/static/js/runtime-main.24fcab54.js.map",
-    "static/js/2.d1f61836.chunk.js": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js",
-    "static/js/2.d1f61836.chunk.js.map": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js.map",
+    "static/js/2.280af915.chunk.js": "https://italiancoders.it/devtalks/static/js/2.280af915.chunk.js",
+    "static/js/2.280af915.chunk.js.map": "https://italiancoders.it/devtalks/static/js/2.280af915.chunk.js.map",
     "index.html": "https://italiancoders.it/devtalks/index.html",
-    "precache-manifest.416c9f0f3cea942eaa4f30008385708e.js": "https://italiancoders.it/devtalks/precache-manifest.416c9f0f3cea942eaa4f30008385708e.js",
+    "precache-manifest.be154327648fb8d64715ddb96f70ec09.js": "https://italiancoders.it/devtalks/precache-manifest.be154327648fb8d64715ddb96f70ec09.js",
     "service-worker.js": "https://italiancoders.it/devtalks/service-worker.js",
     "static/css/main.51f7e749.chunk.css.map": "https://italiancoders.it/devtalks/static/css/main.51f7e749.chunk.css.map",
-    "static/js/2.d1f61836.chunk.js.LICENSE.txt": "https://italiancoders.it/devtalks/static/js/2.d1f61836.chunk.js.LICENSE.txt",
+    "static/js/2.280af915.chunk.js.LICENSE.txt": "https://italiancoders.it/devtalks/static/js/2.280af915.chunk.js.LICENSE.txt",
     "static/media/microphone.png": "https://italiancoders.it/devtalks/static/media/microphone.06dda84b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.24fcab54.js",
-    "static/js/2.d1f61836.chunk.js",
+    "static/js/2.280af915.chunk.js",
     "static/css/main.51f7e749.chunk.css",
-    "static/js/main.9bb53dfa.chunk.js"
+    "static/js/main.ddfaaa74.chunk.js"
   ]
 }
